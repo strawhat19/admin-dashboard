@@ -1,19 +1,19 @@
-// import { Helmet } from 'react-helmet';
+import { brandName, icon } from '../../../../../server';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-
 type Props = {
+  title?: string;
   description?: string;
   children: JSX.Element | JSX.Element[];
-  title?: string;
 };
 
 const PageContainer = ({ title, description, children }: Props) => (
   <HelmetProvider>
     <div>
       <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={description} />
+        <title>{title} | {brandName} Official</title>
+        <meta name={`description`} content={description} />
+        <link rel={`icon`} href={`/images/logos/${icon}`} type={`image/x-icon`} />
       </Helmet>
       {children}
     </div>
