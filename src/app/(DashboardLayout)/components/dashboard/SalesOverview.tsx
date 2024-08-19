@@ -1,26 +1,23 @@
 import React from 'react';
-import { Select, MenuItem } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import DashboardCard from '@/app/(DashboardLayout)/components/shared/DashboardCard';
 import dynamic from "next/dynamic";
+import { year } from '../../../../../server';
+import { useTheme } from '@mui/material/styles';
+import { Select, MenuItem } from '@mui/material';
+import DashboardCard from '@/app/(DashboardLayout)/components/shared/DashboardCard';
+
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
-
 const SalesOverview = () => {
-
-    // select
     const [month, setMonth] = React.useState('1');
 
     const handleChange = (event: any) => {
         setMonth(event.target.value);
     };
 
-    // chart color
     const theme = useTheme();
     const primary = theme.palette.primary.main;
     const secondary = theme.palette.secondary.main;
 
-    // chart
     const optionscolumnchart: any = {
         chart: {
             type: 'bar',
@@ -90,7 +87,6 @@ const SalesOverview = () => {
     ];
 
     return (
-
         <DashboardCard title="Sales Overview" action={
             <Select
                 labelId="month-dd"
@@ -99,9 +95,9 @@ const SalesOverview = () => {
                 size="small"
                 onChange={handleChange}
             >
-                <MenuItem value={1}>March 2023</MenuItem>
-                <MenuItem value={2}>April 2023</MenuItem>
-                <MenuItem value={3}>May 2023</MenuItem>
+                <MenuItem value={1}>March {year}</MenuItem>
+                <MenuItem value={2}>April {year}</MenuItem>
+                <MenuItem value={3}>May {year}</MenuItem>
             </Select>
         }>
             <Chart

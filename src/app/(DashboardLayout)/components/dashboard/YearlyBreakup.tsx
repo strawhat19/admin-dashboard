@@ -1,20 +1,18 @@
-
-import dynamic from "next/dynamic";
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+import dynamic from 'next/dynamic';
+import { year } from '../../../../../server';
 import { useTheme } from '@mui/material/styles';
-import { Grid, Stack, Typography, Avatar } from '@mui/material';
 import { IconArrowUpLeft } from '@tabler/icons-react';
-
+import { Grid, Stack, Typography, Avatar } from '@mui/material';
 import DashboardCard from '@/app/(DashboardLayout)/components/shared/DashboardCard';
 
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+
 const YearlyBreakup = () => {
-  // chart color
   const theme = useTheme();
-  const primary = theme.palette.primary.main;
   const primarylight = '#ecf2ff';
+  const primary = theme.palette.primary.main;
   const successlight = theme.palette.success.light;
 
-  // chart
   const optionscolumnchart: any = {
     chart: {
       type: 'donut',
@@ -95,7 +93,7 @@ const YearlyBreakup = () => {
                 sx={{ width: 9, height: 9, bgcolor: primarylight, svg: { display: 'none' } }}
               ></Avatar>
               <Typography variant="subtitle2" color="textSecondary">
-                2023
+                ${year}
               </Typography>
             </Stack>
           </Stack>

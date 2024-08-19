@@ -19,12 +19,12 @@ const MSidebar = ({
   const sidebarWidth = `270px`;
   const scrollbarStyles = {
     '&::-webkit-scrollbar': {
-      width: '7px',
+      width: `7px`,
 
     },
     '&::-webkit-scrollbar-thumb': {
-      backgroundColor: '#eff2f7',
-      borderRadius: '15px',
+      backgroundColor: `#eff2f7`,
+      borderRadius: `15px`,
     },
   };
 
@@ -37,28 +37,28 @@ const MSidebar = ({
         }}
       >
         <Drawer
-          anchor="left"
+          anchor={`left`}
           open={isSidebarOpen}
-          variant="permanent"
+          variant={`permanent`}
           PaperProps={{
             sx: {
-              boxSizing: "border-box",
+              boxSizing: `border-box`,
               ...scrollbarStyles,
             },
           }}
         >
           <Box
             sx={{
-              height: "100%",
+              height: `100%`,
             }}
           >
-            <Sidebar
-              width={'270px'}
-              collapsewidth="80px"
-              open={isSidebarOpen}
-              themeColor="#5d87ff"
-              themeSecondaryColor="#49beff"
-              showProfile={false}
+            <Sidebar 
+              width={`270px`} 
+              showProfile={false} 
+              open={isSidebarOpen} 
+              themeColor={`#5d87ff`} 
+              collapsewidth={`80px`} 
+              themeSecondaryColor={`#49beff`}
             >
               <Logo img={`/images/logos/${logo}`} />
               <Box>

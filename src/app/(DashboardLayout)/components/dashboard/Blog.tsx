@@ -1,55 +1,43 @@
 
 import Link from "next/link";
-import {
-  CardContent,
-  Typography,
-  Grid,
-  Rating,
-  Tooltip,
-  Fab,
-  Avatar
-} from "@mui/material";
-// import img1 from "public/images/products/s4.jpg";
-// import img2 from "public/images/products/s5.jpg";
-// import img3 from "public/images/products/s7.jpg";
-// import img4 from "public/images/products/s11.jpg";
 import { Stack } from "@mui/system";
+import { year } from "../../../../../server";
 import { IconBasket } from "@tabler/icons-react";
 import BlankCard from "@/app/(DashboardLayout)/components/shared/BlankCard";
-import Image from "next/image";
+import { CardContent, Typography, Grid, Rating, Tooltip, Fab, Avatar } from "@mui/material";
 
 const ecoCard = [
   {
-    title: "Boat Headphone",
-    subheader: "September 14, 2023",
-    photo: '/images/products/s4.jpg',
-    salesPrice: 375,
-    price: 285,
     rating: 4,
+    price: 285,
+    salesPrice: 375,
+    title: `Boat Headphone`,
+    photo: `/images/products/s4.jpg`,
+    subheader: `September 14, ${year}`,
   },
   {
-    title: "MacBook Air Pro",
-    subheader: "September 14, 2023",
-    photo: '/images/products/s5.jpg',
-    salesPrice: 650,
-    price: 900,
     rating: 5,
+    price: 900,
+    salesPrice: 650,
+    title: `MacBook Air Pro`,
+    photo: `/images/products/s5.jpg`,
+    subheader: `September 14, ${year}`,
   },
   {
-    title: "Red Valvet Dress",
-    subheader: "September 14, 2023",
-    photo: '/images/products/s7.jpg',
-    salesPrice: 150,
-    price: 200,
     rating: 3,
+    price: 200,
+    salesPrice: 150,
+    title: `Red Valvet Dress`,
+    photo: `/images/products/s7.jpg`,
+    subheader: `September 14, ${year}`,
   },
   {
-    title: "Cute Soft Teddybear",
-    subheader: "September 14, 2023",
-    photo: '/images/products/s11.jpg',
-    salesPrice: 285,
-    price: 345,
     rating: 2,
+    price: 345,
+    salesPrice: 285,
+    title: `Cute Soft Teddybear`,
+    photo: `/images/products/s11.jpg`,
+    subheader: `September 14, ${year}`,
   },
 ];
 
